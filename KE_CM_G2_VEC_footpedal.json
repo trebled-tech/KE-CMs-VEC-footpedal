@@ -1,0 +1,95 @@
+{
+  "title": "Gen2 VEC foot pedal to copy / command / paste",
+  "maintainers": [
+    "trebled-tech"
+  ],
+  "rules": [
+    {
+      "description": "button1 to cmd-c",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "product_id": 61453,
+                  "vendor_id": 65261
+                }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "button1"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "button2 to cmd (if held)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "product_id": 61453,
+                  "vendor_id": 65261
+                }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "button2"
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "left_command"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "button3 to cmd-v",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "product_id": 61453,
+                  "vendor_id": 65261
+                }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "button1"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
